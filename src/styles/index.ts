@@ -5,32 +5,57 @@ interface ContainerProps {
 }
 
 export const Container = styled.View<ContainerProps>`
-  padding: 0 8px;
-  background-color: ${props => props.background || '#eee'};
+  background-color: #fcc018;
+  width: 100%;
+  height: 100%;
 `;
 
-export const Title = styled.Text`
-  color: #eee;
-  font-size: 28px;
-  margin-bottom: 8px;
-  font-weight: bold;
+export const Header = styled.View`
+  padding: 15px 10px;
+  flex-direction: row;
 `;
 
-export const SliderContainer = styled.ScrollView.attrs({
+export const ImageHeader = styled.Image`
+  width: 45px;
+  height: 45px;
+  margin-right: 8px;
+`;
+
+export const ScrollerContainer = styled.View`
+  padding-left: 10px;
+  background-color: #fcc018;
+`;
+
+export const ScrollerBills = styled.ScrollView.attrs({
   horizontal: true,
   showsHorizontalScrollIndicator: false,
-})<ContainerProps>`
-  padding: 0 8px 15px 8px;
-  background-color: ${props => props.background || '#eee'};
+})``;
+
+export const BillBox = styled.View`
+  width: 100px;
+  height: 110px;
+  background: rgba(255, 255, 255, 0.3);
+  display: flex;
+  justify-content: center;
+  padding: 0 10px;
+  margin-right: 8px;
+  border-radius: 5px;
 `;
 
-export const SliderBox = styled.View`
-  padding-right: 8px;
+export const BillText = styled.Text`
+  font-size: 14px;
 `;
 
-export const ImageBox = styled.Image`
-  width: 200px;
-  height: 230px;
-  border-radius: 8px;
-  overflow: hidden;
+export const LabelHeader = styled.View``;
+
+export const TitleHeader = styled.Text`
+  font-weight: 300;
+  font-size: 14px;
+  color: #111;
+`;
+
+export const SubtitleHeader = styled.Text`
+  font-weight: bold;
+  font-size: 20px;
+  color: #111;
 `;

@@ -9,49 +9,48 @@
  */
 
 import React from 'react';
-import {SafeAreaView, ScrollView, StatusBar} from 'react-native';
+import {SafeAreaView, StatusBar} from 'react-native';
+import Icon from 'react-native-vector-icons/Feather';
 
-import {Container, Title, SliderContainer, SliderBox, ImageBox} from './styles';
+import {
+  Container,
+  ScrollerBills,
+  ScrollerContainer,
+  BillBox,
+  BillText,
+  Header,
+  ImageHeader,
+  LabelHeader,
+  TitleHeader,
+  SubtitleHeader,
+} from './styles';
 
-import Logo from './assets/background.png';
+import Logo from './assets/billshare.png';
 
 const App: React.FC = () => {
   return (
     <>
       <StatusBar backgroundColor="#111" barStyle="light-content" />
       <SafeAreaView>
-        <ScrollView showsVerticalScrollIndicator={false}>
-          <Container background="#111">
-            <Title>Imagens</Title>
-          </Container>
-          <SliderContainer background="#111">
-            {[0, 1, 2, 3].map((value, key) => (
-              <SliderBox key={key}>
-                <ImageBox source={Logo} />
-              </SliderBox>
-            ))}
-          </SliderContainer>
-          <Container background="#242424">
-            <Title>Apps</Title>
-          </Container>
-          <SliderContainer background="#242424">
-            {[0, 1, 2, 3].map((value, key) => (
-              <SliderBox key={key}>
-                <ImageBox source={Logo} />
-              </SliderBox>
-            ))}
-          </SliderContainer>
-          <Container background="#111">
-            <Title>Imagens</Title>
-          </Container>
-          <SliderContainer background="#111">
-            {[0, 1, 2, 3].map((value, key) => (
-              <SliderBox key={key}>
-                <ImageBox source={Logo} />
-              </SliderBox>
-            ))}
-          </SliderContainer>
-        </ScrollView>
+        <Container>
+          <Header>
+            <ImageHeader source={Logo} />
+            <LabelHeader>
+              <TitleHeader>Olá,</TitleHeader>
+              <SubtitleHeader>Guilherme Falcão</SubtitleHeader>
+            </LabelHeader>
+          </Header>
+          <ScrollerContainer>
+            <ScrollerBills>
+              {[0, 1, 2, 3, 4, 5, 6].map((value, key) => (
+                <BillBox key={key}>
+                  <Icon name="bell" size={20} />
+                  <BillText>Avisos</BillText>
+                </BillBox>
+              ))}
+            </ScrollerBills>
+          </ScrollerContainer>
+        </Container>
       </SafeAreaView>
     </>
   );
